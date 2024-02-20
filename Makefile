@@ -26,9 +26,10 @@ logs:
 clean: down
 
 fclean: clean prune
-	sudo rm -rf /home/edvicair/Bureau/Volumes/*
+	sudo rm -rf /home/edvicair/Bureau/Volumes/mariadb_data/*
+	sudo rm -rf /home/edvicair/Bureau/Volumes/wordpress_files/*
 
-re: down up
+re: fclean all
 
 in:
 	sudo docker exec -it $(filter-out $@,$(MAKECMDGOALS)) bash

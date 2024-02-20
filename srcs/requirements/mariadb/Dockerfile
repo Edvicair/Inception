@@ -1,7 +1,8 @@
-From debian:bullseye
-RUN apt-get update -y && apt-get upgrade -y
-RUN apt-get install -y mariadb-server
-RUN apt-get install -y mariadb-client
+FROM debian:bullseye
+
+RUN apt update -y
+RUN apt install -y mariadb-server
+RUN apt install -y mariadb-client
 
 COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
